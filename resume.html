@@ -10,15 +10,26 @@
 <body>
 
 <header>
-    <h2><span class="dot"></span> DK Naim <small>/ CSE STUDENT </small></h2>
+    <h2><span class="dot"></span> DK Naim</h2>
+
+    <div class="menu-icon" onclick="openMenu()">☰</div>
 
     <nav>
-        <a href="index.html">ABOUT ME</a>
-        <a class="active" href="#">RESUME</a>
+        <a class="active" href="index.html">ABOUT</a>
+        <a href="resume.html">RESUME</a>
         <a href="projects.html">PROJECTS</a>
         <a href="contact.html">CONTACT</a>
     </nav>
 </header>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="close-btn" onclick="closeMenu()">✕</div>
+    <a href="index.html">ABOUT</a>
+    <a href="resume.html">RESUME</a>
+    <a href="projects.html">PROJECTS</a>
+    <a href="contact.html">CONTACT</a>
+</div>
 
 <section class="resume">
 
