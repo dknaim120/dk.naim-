@@ -2,17 +2,29 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
+
+    /* 🔥 MOBILE FIXED WIDTH */
+    max-width: 380px;
+    margin: auto;
+    overflow-x: hidden;
 }
 
 /* HEADER */
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px 5%;
-    background: white;    
+    padding: 15px;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .dot {
@@ -20,14 +32,18 @@ header {
     height: 10px;
     background: blue;
     display: inline-block;
-    margin-right: 10px;    
+    margin-right: 10px;
+}
+
+nav {
+    margin-top: 10px;
 }
 
 nav a {
-    margin-left: 20px;
+    margin: 0 10px;
     text-decoration: none;
     color: black;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .active {
@@ -37,27 +53,27 @@ nav a {
 /* HERO */
 .hero {
     display: flex;
-    height: 90vh;
+    flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
 /* LEFT */
 .left {
-    width: 50%;
+    width: 100%;
+    height: 180px;
     background: #d8c8b8;
 }
 
-/* CENTER CARD */
+/* CARD */
 .card {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 260px;
+    position: relative;
+    top: -70px;
+    width: 90%;
+    margin: auto;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    z-index: 10;
 }
 
 /* CARD TOP */
@@ -68,8 +84,8 @@ nav a {
 }
 
 .card-top img {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
 }
 
@@ -94,28 +110,36 @@ nav a {
 
 /* RIGHT CONTENT */
 .right {
-    position: absolute;
-    top: 50%;
-    left: 65%;
-    transform: translateY(-50%);
-    width: 28%;
+    width: 90%;
+    margin: -40px auto 20px;
+    text-align: center;
 }
 
 .right h1 {
-    font-size: 70px;
+    font-size: 40px;
     margin: 0;
 }
 
-/* 🔥 BUTTON FIX (anchor + button both work করবে) */
-.btns a,
-.btns button {
+.right h4 {
+    font-size: 16px;
+}
+
+.right p {
+    font-size: 14px;
+}
+
+/* BUTTON */
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btns a {
     padding: 10px 20px;
-    margin-right: 10px;
     border-radius: 20px;
     text-decoration: none;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
 }
 
 .blue {
@@ -130,17 +154,16 @@ nav a {
 
 /* FOOTER */
 footer {
-    padding: 30px 5%;
+    padding: 20px;
     background: white;
 }
 
-/* ❌ আগে ভুল ছিল footer-box → এখন ঠিক করা হলো */
 .footer-box {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* CENTER ALIGN */
 .footer-box div {
     text-align: center;
 }
@@ -152,365 +175,263 @@ footer {
 .footer-box p {
     margin: 0;
     font-size: 14px;
-    color: rgb(0, 0, 0);
 }
 
 .footer-box .social a {
     color: black;
-    text-decoration: none;
     margin: 0 5px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-    }
-
-    .left {
-        width: 100%;
-        height: 200px;
-    }
-
-    .card {
-        position: static;
-        transform: none;
-        margin: 20px auto;
-    }
-
-    .right {
-        position: static;
-        transform: none;
-        width: 100%;
-        padding: 20px;
-    }
-
-    .footer-box {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-
-/* RESUME PAGE */
+/* RESUME */
 .resume {
     background: #d8c8b8;
-    padding: 30px 20%;
-}
-
-.title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.resume h2 {
-    margin-top: 40px;
+    padding: 20px;
 }
 
 .box {
     background: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    margin: 20px 0;
+    padding: 20px;
+    margin: 15px 0;
     border-radius: 5px;
 }
 
-.left-text {
-    width: 40%;
-}
-
-.left-text h3 {
-    color: blue;
-}
-
+.left-text,
 .right-text {
-    width: 55%;
+    width: 100%;
 }
 
-/* SKILLS */
-.skills {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.bar {
-    background: #eee;
-    height: 8px;
-    margin-bottom: 15px;
-}
-
-.bar div {
-    height: 100%;
-    background: blue;
-}
-
-
-
-/* Projects Section */
+/* PROJECT */
 .projects {
     text-align: center;
-    padding: 80px 20px;
+    padding: 40px 15px;
     background: #d4c6b6;
 }
 
-.projects h1 {
-    margin-bottom: 10px;
-}
-
-.project-sub {
-    margin-bottom: 40px;
-    color: #333;
-}
-
-/* Card */
 .project-card {
     display: flex;
-    max-width: 950px;
-    margin: 50px auto;
+    flex-direction: column;
+    margin: 30px 0;
     background: #f5f5f5;
     border-radius: 8px;
-    overflow: hidden;
 }
 
-/* Text */
-.project-text {
-    width: 50%;
-    padding: 40px;
-    text-align: left;
-}
-
-.project-text h3 {
-    color: blue;
-}
-
-.project-text h5 {
-    margin: 10px 0;
-}
-
-.project-text p {
-    font-size: 14px;
-    color: #444;
-}
-
-/* Image Side */
+.project-text,
 .project-img {
-    width: 50%;
+    width: 100%;
+    padding: 20px;
 }
 
-/* Grid (Daraz style) */
+/* IMAGE GRID */
 .img-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(3, 100px);
+    grid-template-rows: repeat(3, 80px);
     gap: 5px;
-    height: 100%;
-    padding: 5px;
 }
 
-/* Big image */
-.img-grid .big {
-    grid-row: span 3;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: #fff;
-}
-
-/* Small images */
 .img-grid img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: #fff;
-    cursor: pointer;
 }
 
-/* Lightbox */
-#lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-#lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-#lightbox span {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-/* Mobile */
-@media(max-width: 768px) {
-    .project-card {
-        flex-direction: column;
-    }
-
-    .project-text,
-    .project-img {
-        width: 100%;
-    }
-}
-
-
-
-/* CONTACT PAGE */
+/* CONTACT */
 .contact-container {
     background: #d8c8b8;
-    padding: 60px 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 30px 15px;
+    text-align: center;
 }
 
 .contact-title {
-    font-size: 40px;
-    margin-bottom: 30px;
+    font-size: 30px;
 }
 
-/* BOX */
 .contact-box {
     background: white;
-    padding: 30px;
-    width: 100%;
-    max-width: 600px;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* INPUT */
 .contact-box input,
 .contact-box textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-/* ROW */
 .row {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
 }
 
-.row input {
-    width: 50%;
-}
-
-/* TEXTAREA */
-.contact-box textarea {
-    height: 120px;
-    resize: none;
-}
-
-/* BUTTON */
 .contact-box button {
     width: 100%;
     padding: 12px;
-    border: none;
     background: blue;
     color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.contact-box button:hover {
-    background: darkblue;
+    border: none;
 }
 
 
+
 /* ========================= */
-/* 🔥 PERFECT MOBILE FIX */
+/* 🔥 RESPONSIVE PC VERSION */
 /* ========================= */
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
 
-    /* HERO layout same feel but stacked */
-    .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        text-align: center;
+    body {
+        max-width: 100%;
     }
 
-    /* background */
-    .left {
-        width: 100%;
-        height: 180px;
-    }
-
-    /* CARD */
-    .card {
-        position: relative;
-        top: -70px;
-        left: auto;
-        transform: none;
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    /* RIGHT CONTENT */
-    .right {
-        position: relative;
-        top: -40px;
-        left: auto;
-        transform: none;
-        width: 90%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .right h1 {
-        font-size: 42px; /* 70px → mobile friendly */
-    }
-
-    .right h4 {
-        font-size: 16px;
-    }
-
-    .right p {
-        font-size: 14px;
-    }
-
-    /* BUTTON CENTER */
-    .btns {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    /* HEADER FIX */
+    /* HEADER */
     header {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 5%;
+        text-align: left;
     }
 
     nav {
-        margin-top: 10px;
+        margin-top: 0;
+    }
+
+    nav a {
+        margin-left: 20px;
+    }
+
+    /* HERO */
+    .hero {
+        flex-direction: row;
+        height: 90vh;
+    }
+
+    .left {
+        width: 50%;
+        height: auto;
+    }
+
+    .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 260px;
+    }
+
+    .right {
+        position: absolute;
+        top: 50%;
+        left: 65%;
+        transform: translateY(-50%);
+        width: 28%;
+        text-align: left;
+    }
+
+    .right h1 {
+        font-size: 70px;
     }
 
     /* FOOTER */
     .footer-box {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* PROJECT */
+    .project-card {
+        flex-direction: row;
+        max-width: 950px;
+        margin: 50px auto;
+    }
+
+    .project-text {
+        width: 50%;
+    }
+
+    .project-img {
+        width: 50%;
+    }
+
+    /* CONTACT */
+    .contact-container {
+        padding: 60px 5%;
+    }
+
+    .contact-box {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .row input {
+        width: 50%;
     }
 }
 
+
+/* ========================= */
+/* 🔥 HERO PERFECT PC MATCH */
+/* ========================= */
+
+@media (min-width: 768px) {
+
+    .hero {
+        position: relative;
+        height: 100vh;
+    }
+
+    /* LEFT BACKGROUND BLOCK */
+    .left {
+        width: 40%;
+        height: 100%;
+    }
+
+    /* CARD CENTER LEFT SIDE */
+    .card {
+        position: absolute;
+        left: 40%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 260px;
+    }
+
+    /* RIGHT TEXT */
+    .right {
+        position: absolute;
+        left: 55%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30%;
+    }
+
+    .right h1 {
+        font-size: 80px; /* big hello */
+        font-weight: bold;
+    }
+
+    .right h4 {
+        margin: 15px 0;
+    }
+
+    .right p {
+        margin-top: 15px;
+        line-height: 1.6;
+    }
+
+    /* BUTTON STYLE LIKE IMAGE */
+    .blue {
+        background: #1a5cff;
+        border-radius: 20px;
+    }
+
+    .outline {
+        background: transparent;
+        border: 1px solid black;
+        color: black;
+        border-radius: 20px;
+    }
+}
