@@ -1,4 +1,6 @@
-// Button hover effect
+// =========================
+// 🔥 BUTTON HOVER EFFECT
+// =========================
 document.querySelectorAll("button").forEach(btn => {
     btn.addEventListener("mouseover", () => {
         btn.style.transform = "scale(1.05)";
@@ -10,7 +12,9 @@ document.querySelectorAll("button").forEach(btn => {
 });
 
 
-// Form alert
+// =========================
+// 📩 FORM ALERT
+// =========================
 const form = document.querySelector("form");
 
 if (form) {
@@ -20,7 +24,9 @@ if (form) {
 }
 
 
-// 🔥 Image Lightbox (NEW ADD)
+// =========================
+// 🖼️ IMAGE LIGHTBOX
+// =========================
 const images = document.querySelectorAll('.img-grid img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
@@ -34,7 +40,7 @@ if (images.length > 0 && lightbox && lightboxImg) {
         });
     });
 
-    // Close on click outside image
+    // Close on outside click
     lightbox.addEventListener("click", (e) => {
         if (e.target !== lightboxImg) {
             lightbox.style.display = "none";
@@ -42,8 +48,37 @@ if (images.length > 0 && lightbox && lightboxImg) {
     });
 }
 
-// Close button function
+// Close button
 function closeImg() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.style.display = "none";
+    if (lightbox) {
+        lightbox.style.display = "none";
+    }
 }
+
+
+// =========================
+// 📱 SIDEBAR MENU (NEW)
+// =========================
+function openMenu() {
+    const sidebar = document.querySelector(".sidebar");
+    if (sidebar) {
+        sidebar.classList.add("active");
+    }
+}
+
+function closeMenu() {
+    const sidebar = document.querySelector(".sidebar");
+    if (sidebar) {
+        sidebar.classList.remove("active");
+    }
+}
+
+
+// =========================
+// ❌ CLOSE MENU WHEN CLICK LINK
+// =========================
+document.querySelectorAll(".sidebar a").forEach(link => {
+    link.addEventListener("click", () => {
+        closeMenu();
+    });
+});
