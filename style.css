@@ -435,70 +435,76 @@ footer {
 }
 
 
-
-
 /* ========================= */
-/* 🔥 MOBILE PERFECT DESIGN */
+/* 🔥 PERFECT MOBILE FIX */
 /* ========================= */
 
 @media (max-width: 768px) {
 
-    /* HEADER */
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    nav {
-        margin-top: 10px;
-    }
-
-    nav a {
-        margin: 0 10px;
-        font-size: 14px;
-    }
-
-    /* HERO SECTION */
+    /* HERO layout same feel but stacked */
     .hero {
         display: flex;
         flex-direction: column;
+        align-items: center;
         height: auto;
+        text-align: center;
     }
 
-    /* LEFT BACKGROUND */
+    /* background */
     .left {
         width: 100%;
-        height: 150px;
+        height: 180px;
     }
 
-    /* CARD CENTER */
+    /* CARD */
     .card {
         position: relative;
-        top: -60px;
+        top: -70px;
         left: auto;
         transform: none;
+        width: 85%;
         margin: 0 auto;
-        width: 90%;
     }
 
     /* RIGHT CONTENT */
     .right {
-        position: static;
-        width: 100%;
-        padding: 20px;
+        position: relative;
+        top: -40px;
+        left: auto;
+        transform: none;
+        width: 90%;
+        margin: 0 auto;
         text-align: center;
     }
 
     .right h1 {
-        font-size: 40px;
+        font-size: 42px; /* 70px → mobile friendly */
     }
 
+    .right h4 {
+        font-size: 16px;
+    }
+
+    .right p {
+        font-size: 14px;
+    }
+
+    /* BUTTON CENTER */
     .btns {
         display: flex;
         justify-content: center;
-        gap: 10px;
         flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* HEADER FIX */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        margin-top: 10px;
     }
 
     /* FOOTER */
@@ -508,48 +514,3 @@ footer {
     }
 }
 
-
-
-
-
-
-@media (max-width: 768px) {
-    .resume {
-        padding: 30px 10%; /* PC তে 20%-30% padding, mobile e কমিয়ে 10% */
-    }
-
-    .resume h2 {
-        font-size: 28px; /* মোবাইলে বড় করে দেখাবে */
-    }
-
-    .box {
-        flex-direction: column; /* PC row, mobile column */
-        padding: 20px; /* কম padding mobile জন্য */
-    }
-
-    .left-text,
-    .right-text {
-        width: 100%; /* মোবাইলে পুরো width নেবে */
-    }
-}
-@media (max-width: 768px) {
-    .contact-container {
-        padding: 60px 10%; /* PC তে 5% padding, mobile e 10% */
-    }
-
-    .contact-title {
-        font-size: 36px; /* মোবাইলে বড় */
-        text-align: center;
-    }
-
-    .contact-box {
-        max-width: 100%; /* Mobile এ পুরো screen নেবে */
-        padding: 25px; /* একটু বড় box */
-    }
-
-    .contact-box input,
-    .contact-box textarea,
-    .contact-box button {
-        font-size: 16px; /* Mobile friendly */
-    }
-}
